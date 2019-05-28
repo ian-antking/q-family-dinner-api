@@ -1,0 +1,34 @@
+{
+  "name": "queer-family-dinner-api",
+  "version": "1.0.0",
+  "description": "api for managing lgbtq+ community dinners ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -r dotenv/config index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ian-antking/q-family-dinner-api.git"
+  },
+  "author": "Ian King",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ian-antking/q-family-dinner-api/issues"
+  },
+  "homepage": "https://github.com/ian-antking/q-family-dinner-api#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.2.5",
+    "dotenv": "^8.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-mcr-codes": "^1.3.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-react": "^7.9.1",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.5.11"
+  }
+}
