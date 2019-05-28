@@ -1,5 +1,9 @@
 {
 	"extends": [
 		"mcr-codes"
-	]
+	],
+	"globals": {
+		"window": true,
+		"document": true
+	}
 }
