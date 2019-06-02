@@ -8,8 +8,8 @@ app.use(express.json());
 
 app.use('/event', eventRouter);
 
-app.get('*', (_, res) => {
-  res.redirect('/');
-});
+// app.get('*', (_, res) => {
+//   res.redirect('/');
+// });
 
 module.exports = app;

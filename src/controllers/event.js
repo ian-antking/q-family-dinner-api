@@ -1,7 +1,6 @@
 const Event = require('../models/event');
 
 exports.postEvent = (req, res) => {
-  console.log(req.body);
   const event = new Event({
     date: req.body.date,
     address: {
@@ -19,11 +18,32 @@ exports.postEvent = (req, res) => {
   });
 };
 
-exports.getEvents = (_, res) => {
-  Event.find({}, (err, events) => {
+exports.getEvents = (req, res) => {
+  const options = { ...req.query };
+  Event.find(options, (err, events) => {
     if (err) {
       res.status(500).json({ error: err });
     }
     res.status(200).json({ events: events });
+  });
+};
+
+exports.updateEvent = (req, res) => {
+  Event.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, event) => {
+    if (err) {
+      res.status(500).json(err);
+    } else {
+      res.status(200).json(event);
+    }
+  });
+};
+
+exports.deleteEvent = (req, res) => {
+  Event.deleteOne({ _id: req.params.id }, (err) => {
+    if (err) {
+      res.status(500).send();
+    } else {
+      res.status(200).send();
+    }
   });
 };
