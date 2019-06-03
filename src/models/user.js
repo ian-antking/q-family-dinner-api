@@ -9,11 +9,12 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    validate: [isEmail.validate, 'Invalid email address'],
+    validate: [isEmail.validate, 'invalid email address'],
+    unique: true,
   },
   password: {
     type: String,
-    minlength: [8, 'Password must be at least 8 characters long'],
+    minlength: [8, 'password must be at least 8 characters long'],
   },
 });
 
