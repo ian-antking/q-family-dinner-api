@@ -3,6 +3,6 @@ const mapController = require('../controllers/map');
 
 const router = express.Router();
 
-router.post('/', mapController.getThreeWords);
+router.get('/', mapController.getThreeWords);
 
 module.exports = router;
