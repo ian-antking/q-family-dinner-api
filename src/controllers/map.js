@@ -7,6 +7,6 @@ exports.getThreeWords = (request, response) => {
   const URL = `https://api.what3words.com/v3/convert-to-3wa?coordinates=${lat},${long}&key=${TOKEN}`;
   axios.get(URL)
     .then(res => {
-      response.status(200).send(res.data);
+      response.status(200).json(res);
     });
 };
